@@ -56,11 +56,23 @@ public abstract class Animal {
             this.peso = peso;
         }
     }
-
+/**
+ * Devuelve el código identificativo del animal.
+ *
+ * @return el código identificativo del animal
+ */
     public String getCodigo() {
         return codigo;
     }
-
+/**
+ * Establece el código identificativo del animal.
+ *
+ * El código debe estar formado por exactamente 5 caracteres
+ * alfanuméricos en minúscula (a-z, 0-9).
+ *
+ * @param codigo el nuevo código identificativo del animal
+ * @throws IllegalArgumentException si el código no cumple el patrón requerido
+ */
     public void setCodigo(String codigo) {
         if (!codigo.matches("[0-9a-z]{5}")) {
             throw new IllegalArgumentException();
@@ -68,11 +80,22 @@ public abstract class Animal {
             this.codigo = codigo;
         }
     }
-
+/**
+ * Devuelve la fecha de nacimiento del animal.
+ *
+ * @return la fecha de nacimiento del animal
+ */
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
-
+/**
+ * Establece la fecha de nacimiento del animal.
+ *
+ * La fecha debe tener un formato válido ISO-8601 (yyyy-MM-dd).
+ *
+ * @param fechaNacimiento la fecha de nacimiento en formato "yyyy-MM-dd"
+ * @throws IllegalArgumentException si la fecha no tiene un formato válido
+ */
     public void setFechaNacimiento(String fechaNacimiento) {
         LocalDate fecha;
 
@@ -84,7 +107,11 @@ public abstract class Animal {
 
         this.fechaNacimiento = fecha;
     }
-
+/**
+ * Devuelve el sexo del animal.
+ *
+ * @return el sexo del animal ('M' para hembra o 'H' para macho)
+ */
     public char getSexo() {
         return sexo;
     }
